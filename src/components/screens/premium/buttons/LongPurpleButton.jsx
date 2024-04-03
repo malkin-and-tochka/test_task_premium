@@ -16,7 +16,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: '#A855F7',
-    marginTop: 50
+    marginTop: 50,
+    position: "absolute",
+    bottom: 50
   },
   text: {
     fontFamily: "SF Pro Display",

@@ -19,12 +19,11 @@ const PremiumScreen = () => {
       <Cross style={styles.cross} />
       <ToggleVersion togglePremiumVersion={togglePremiumVersion} setP={setP} setSP={setSP} />
       {togglePremiumVersion === "SP" ?
-        <SuperPremium selectedId={selectedId} setSelectedId={setSelectedId} /> :
-        <Premium selectedId={selectedId} setSelectedId={setSelectedId} />}
-      <View style={togglePremiumVersion === "SP" ? styles.bottomBar : [styles.bottomBar, {
-        position: "absolute",
-        bottom: 0,
-      }]}>
+        <SuperPremium selectedId={selectedId} setSelectedId={setSelectedId} />
+        :
+        <Premium selectedId={selectedId} setSelectedId={setSelectedId} />
+      }
+      <View style={styles.bottomBar}>
         <LongPurpleButton />
         <BottomBar />
       </View>

@@ -33,15 +33,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   wrapper: {
-    width: '90%',
+    width: "90%",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20
+    marginTop: 20,
+    position: "absolute",
+    bottom: 0,
   },
   textWrapper: {
-    width: '30%',
-    height: 30
-  }
-})
+    width: "30%",
+    height: 30,
+  },
+});
 
 export default BottomBar;
