@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const BottomBar = () => {
   return (
     <View style={styles.wrapper}>
-      <TouchableOpacity style={styles.textWrapper}>
-        <Text style={styles.text}>
-          Terms of use
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.textWrapper}>
-        <Text style={styles.text}>
-          Restore purchase
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.textWrapper}>
-        <Text style={styles.text}>
-          Privacy policy
-        </Text>
-      </TouchableOpacity>
+      <Link text={'Terms of use'}/>
+      <Link text={'Restore purchase'}/>
+      <Link text={'Privacy policy'}/>
     </View>
+  );
+};
+
+const Link = ({ text }) => {
+  const [isTouched, setIsTouched] = useState(false);
+  return (
+    <TouchableOpacity activeOpacity={1} onPressOut={() => setIsTouched(false)} onPressIn={() => setIsTouched(true)}
+                      style={styles.textWrapper}>
+      <Text style={isTouched ? [styles.text, { color: "#A855F7" }] : styles.text}>
+        {text}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
